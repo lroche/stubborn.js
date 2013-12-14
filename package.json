@@ -1,0 +1,45 @@
+{
+  "name": "stubborn.js",
+  "version": "0.5.0",
+  "description": "stubborn.js helps to stub AMD modules on Dojo AMD Loader",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start ./karma.conf.js",
+    "start": "npm install && grunt"
+  },
+  "main": "stubborn.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lroche/stubborn.js.git"
+  },
+  "keywords": [
+    "stub",
+    "dojo",
+    "AMD"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.7",
+    "grunt-contrib-compress": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-volo": "0.0.2",
+    "grunt-bower-task": "~0.3.4",
+    "grunt-bump": "0.0.11",
+    "karma": "~0.8.8",
+    "grunt-karma": "~0.4.0"
+  },
+  "author": "lroche",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "volo": {
+    "baseUrl": "deps",
+    "dependencies": {
+      "karma-dojo-adapter": "github:lroche/karma-dojo/master#dojo-adapter.js",
+      "dojo": "github:dojo/dojo/1.8.5",
+      "sinon": "github:cjohansen/Sinon.JS/v1.7.3"
+    }
+  }
+}

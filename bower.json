@@ -1,0 +1,40 @@
+{
+  "name": "stubborn.js",
+  "version": "0.5.0",
+  "homepage": "https://github.com/lroche/stubborn.js",
+  "authors": [
+    "Lionel Roche"
+  ],
+  "description": "stub AMD components on Dojo AMD Loader",
+  "main": "stubborn.js",
+  "keywords": [
+    "stub",
+    "AMD"
+    "dojo",
+    "dojotoolkit",
+    "javascript"
+  ],
+  "dependencies":{
+    "dojo":">1.8.2"
+  },
+  "devDependencies":{
+    "sinon":"~1.7.3",
+    "karma-dojo-adapter":"https://github.com/lroche/karma-dojo/raw/master/dojo-adapter.js"
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "dojo-config.js",
+    "karma-conf.js",
+    "Gruntfile.js",
+    "lib",
+    "deps",
+    "build",
+    "dist",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
