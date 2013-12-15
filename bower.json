@@ -9,7 +9,7 @@
   "main": "stubborn.js",
   "keywords": [
     "stub",
-    "AMD"
+    "AMD",
     "dojo",
     "dojotoolkit",
     "javascript"
@@ -22,7 +22,6 @@
     "karma-dojo-adapter":"https://github.com/lroche/karma-dojo/raw/master/dojo-adapter.js"
   },
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "dojo-config.js",
