@@ -9,7 +9,7 @@ define([
     "dojo/_base/array",
     "dojo/_base/lang",
     "dojo/aspect",
-    "dojo/Deferred",
+    "dojo/Deferred"
 ], function(has, array, lang, aspect, Deferred) {
     
     var _stubs={};
