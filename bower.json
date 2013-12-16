@@ -25,7 +25,7 @@
   "ignore": [
     "**/.*",
     "dojo-config.js",
-    "karma-conf.js",
+    "karma.conf.js",
     "Gruntfile.js",
     "lib",
     "deps",
