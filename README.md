@@ -18,6 +18,10 @@ or you can use [volojs](http://volojs.org):
 
 	volo add lroche/stubborn.js
 
+or use [bower](http://bower.io)
+
+	bower install stubborn.js
+
 
 How to use it ?
 -----
