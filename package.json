@@ -1,6 +1,6 @@
 {
   "name": "stubborn.js",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "stubborn.js helps to stub AMD modules on Dojo AMD Loader",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start ./karma.conf.js",
