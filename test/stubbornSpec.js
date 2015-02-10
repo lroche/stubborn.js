@@ -54,6 +54,41 @@ define(["stubborn", "require", "testApp/singleton"],function(sb, require, origin
 			});
 
 		});
+		it("should restore dependencies correctly", function(){
+			var valueOriginal = original.value(), //now value is 1
+				People; 
+			runs(function(){
+				sb.create("testApp/People", {
+					"dojo/_base/config": "testStub/fakeConfig",
+					"testApp/singleton": {
+						value: function(){
+							return -1;
+						}
+					}
+				}).then(function(m){
+					People=m;
+				});
+			});
+			waitsFor(function(){
+				return typeof People !="undefined"
+			}, "People shoould be ready", 100);
+			runs(function(){
+				var p = new People();
+				p.on("smile", function(e){
+					msg = e.message;
+				});
+				p.smile();
+			});
+			waitsFor(function(){
+				return msg == "-1"
+			},1, "message received from People instance doesn't match or something else");
+			runs(function(){
+				//Check the original value, each dependency of stub module should be restored
+				var singleton = require("testApp/singleton");
+				expect(singleton).toBe(original);
+				expect(require("testApp/singleton").value()).toBe(1);
+			})
+		});
 		
 	});
 })

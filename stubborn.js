@@ -68,7 +68,6 @@ define([
             map[modulePath]={};
             
             for(var key in stubs){
-                require.undef(key);
                 //Create unique id from stubbed module
                 var stubModuleKey = key+uid()+modulePath;
                
