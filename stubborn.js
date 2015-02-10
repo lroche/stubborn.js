@@ -1,5 +1,5 @@
 /*!
-	stubborn.js v0.5.1
+	stubborn.js v0.5.2
 	Copyright (c) 2013 Lionel Roche.
 	Distributed under MIT license
 	See https://github.com/lroche/stubborn.js for more details 
