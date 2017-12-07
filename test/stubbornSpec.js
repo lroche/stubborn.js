@@ -1,5 +1,5 @@
-define(["stubborn", "require", "testApp/singleton"],function(sb, require, original){
-
+define(["stubborn", "require", "testApp/singleton"],function(sb, require, original){	
+	
 	describe("stubborn", function(){
 		
 		it("should support singleton", function(){
@@ -17,7 +17,7 @@ define(["stubborn", "require", "testApp/singleton"],function(sb, require, origin
 				expect(singleton.value()).toBe(1);
 			});
 		});
-		it("should clean cache correctly after each testCase", function(){
+		it("should clean cache correctly after each testCase", function(){			
 			var singleton = require("testApp/singleton");
 			expect(singleton).toBe(original);
 		});
@@ -56,7 +56,7 @@ define(["stubborn", "require", "testApp/singleton"],function(sb, require, origin
 		});
 		it("should restore dependencies correctly", function(){
 			var valueOriginal = original.value(), //now value is 1
-				People; 
+				People, msg; 
 			runs(function(){
 				sb.create("testApp/People", {
 					"dojo/_base/config": "testStub/fakeConfig",
@@ -80,13 +80,13 @@ define(["stubborn", "require", "testApp/singleton"],function(sb, require, origin
 				p.smile();
 			});
 			waitsFor(function(){
-				return msg == "-1"
+				return msg == -1;
 			},1, "message received from People instance doesn't match or something else");
 			runs(function(){
 				//Check the original value, each dependency of stub module should be restored
 				var singleton = require("testApp/singleton");
 				expect(singleton).toBe(original);
-				expect(require("testApp/singleton").value()).toBe(1);
+				expect(require("testApp/singleton").value()).toBe(1);				
 			})
 		});
 		

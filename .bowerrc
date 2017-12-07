@@ -1,3 +1,4 @@
 {
-  "directory": "deps"
+  "directory": "deps",
+  "registry": "https://registry.bower.io"
 }

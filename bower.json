@@ -18,7 +18,7 @@
     "dojo":">1.8.2"
   },
   "devDependencies":{
-    "sinon":"~1.7.3",
+    "sinon":"http://sinonjs.org/releases/sinon-1.7.3.js",
     "karma-dojo-adapter":"https://github.com/lroche/karma-dojo/raw/master/dojo-adapter.js"
   },
   "license": "MIT",

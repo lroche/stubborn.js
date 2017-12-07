@@ -1,5 +1,5 @@
 /*!
-	stubborn.js v0.5.2
+	stubborn.js v0.6.0
 	Copyright (c) 2013 Lionel Roche.
 	Distributed under MIT license
 	See https://github.com/lroche/stubborn.js for more details 
@@ -59,12 +59,15 @@ define([
             if(!has("dojo-undef-api")){
                 throw new Error("Configuration Error: dojo-undef-api should be enabled in dojo's config");
             }
+            if(!has("dojo-publish-privates")){
+                throw new Error("Configuration Error: dojo-publish-privates should be enabled in dojo's config");
+            }
             
             //Remove module currently in cache.
             //But we keep a ref on original module to be restored when modulePath will be garbaged.
             _stubs[modulePath] = require.modules[modulePath];           
             require.undef(modulePath);
- 
+            
             map[modulePath]={};
             
             for(var key in stubs){
@@ -93,9 +96,14 @@ define([
                 array.map(gc, require.undef);
             };
             if(typeof jasmine !="undefined"){
-               if(jasmine.getEnv().currentSpec){
+                
+                var currentSpec = jasmine.getEnv().currentSpec; //Jasmine 1.3
+                if(!currentSpec && (typeof jasmineBridge !="undefined")){ //Jasmine 2
+                    currentSpec = jasmineBridge.getEnv().currentSpec;
+                } 
+                if(currentSpec){
                     //we can remove all stubs at the end of the currentSpec of jasmine.
-                    var h = aspect.after(jasmine.getEnv().currentSpec, "finishCallback", function(){
+                    var h = aspect.after(currentSpec, "finishCallback", function(){
                         h.remove();
                         garbage();
                     });

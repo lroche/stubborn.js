@@ -1,6 +1,6 @@
 {
   "name": "stubborn.js",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "stubborn.js helps to stub AMD modules on Dojo AMD Loader",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start ./karma.conf.js",
@@ -18,18 +18,22 @@
   ],
   "devDependencies": {
     "grunt": "~0.4.2",
-    "load-grunt-tasks": "~0.2.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.7",
-    "grunt-contrib-compress": "~0.5.3",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-volo": "0.0.2",
     "grunt-bower-task": "~0.3.4",
     "grunt-bump": "0.0.11",
-    "karma": "~0.8.8",
-    "grunt-karma": "~0.4.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-compress": "~0.5.3",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-karma": "~0.4.0",
+    "grunt-volo": "0.0.2",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-bridge": "file:../../work/karma-jasmine-bridge",
+    "load-grunt-tasks": "~0.2.0"
   },
   "author": "lroche",
   "license": "MIT",
@@ -38,8 +42,8 @@
     "baseUrl": "deps",
     "dependencies": {
       "karma-dojo-adapter": "github:lroche/karma-dojo/master#dojo-adapter.js",
-      "dojo": "github:dojo/dojo/1.8.5",
-      "sinon": "github:cjohansen/Sinon.JS/v1.7.3"
+      "dojo": "github:dojo/dojo/1.9.9",
+      "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js"
     }
   }
 }
