@@ -89,6 +89,31 @@ define(["stubborn", "require", "testApp/singleton"],function(sb, require, origin
 				expect(require("testApp/singleton").value()).toBe(1);				
 			})
 		});
+		it("should restore dependencies correctly in Jasmine 2 Spec", function(done){
+			var valueOriginal = original.value(), //now value is 1
+				People, msg; 
+			
+			sb.create("testApp/People", {
+				"dojo/_base/config": "testStub/fakeConfig",
+				"testApp/singleton": {
+					value: function(){
+						return -1;
+					}
+				}
+			}).then(function(People){
+				var p = new People();
+				p.on("smile", function(e){
+					msg = e.message;
+				});
+				p.smile();
+				if(msg != -1){
+					fail("value of message " + msg +" received from People instance doesn't match or something else");
+				}
+				done();
+
+
+			});
 		
+		});
 	});
 })
