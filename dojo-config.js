@@ -6,7 +6,7 @@ var dojoConfig = {
     
     cacheBust:new Date(),
     packages:[
-    	{name:"dojo", location:"/base/deps/dojo"},
+    	{name:"dojo", location:"/base/node_modules/dojo"},
     	{name:"stubborn", location:"/base", main:"stubborn"},
 
     	{name:"testApp", location:"/base/test/app"},

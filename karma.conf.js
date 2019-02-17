@@ -12,14 +12,14 @@ module.exports = function(config){
 			/* Dojo config: */
 			"dojo-config.js",
 			/* Dojo adapter for Karma@0.8.x*/
-			"deps/karma-dojo-adapter.js",	
+			"node_modules/karma-dojo/dojo-adapter.js",	
 			/* dojo main file */
-			"deps/dojo/dojo.js",
+			"node_modules/dojo/dojo.js",
 		
-			"deps/sinon.js",
+			"node_modules/sinon/pkg/sinon.js",
 		
 			//AMD dojo files
-			{pattern: 'deps/dojo/**/*.js', included:false, served:true, watched:false},
+			{pattern: 'node_modules/dojo/**/*.js', included:false, served:true, watched:false},
 			//src
 			{pattern: 'stubborn.js', included: false, served:true, watched:true},
 			//test files
@@ -30,7 +30,7 @@ module.exports = function(config){
 		
 		],
 
-		frameworks: ['jasmine', 'jasmine-bridge'],
+		frameworks: ['jasmine-bridge', 'jasmine'],
 
 		//	Using star (*) as work-around to force resolution of pluginDirectory during inclusion
 		plugins: [
